@@ -72,8 +72,8 @@
        <widget class="QTextEdit" name="textEdit">
         <property name="geometry">
          <rect>
-          <x>-30</x>
-          <y>70</y>
+          <x>30</x>
+          <y>20</y>
           <width>761</width>
           <height>461</height>
          </rect>
@@ -91,26 +91,6 @@
          <enum>QFrame::Plain</enum>
         </property>
        </widget>
-      </widget>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QTabWidget" name="tabWidget_2">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>120</height>
-       </size>
-      </property>
-      <widget class="QWidget" name="tab_4">
-       <attribute name="title">
-        <string>Tab 1</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_5">
-       <attribute name="title">
-        <string>Tab 2</string>
-       </attribute>
       </widget>
      </widget>
     </item>
@@ -167,12 +147,13 @@
     <property name="title">
      <string>Правка</string>
     </property>
-    <addaction name="action"/>
-    <addaction name="action_3"/>
+    <addaction name="Undo"/>
+    <addaction name="Redo"/>
     <addaction name="separator"/>
-    <addaction name="action_5"/>
+    <addaction name="Cut"/>
+    <addaction name="Copy"/>
+    <addaction name="Paste"/>
     <addaction name="action_6"/>
-    <addaction name="action_7"/>
    </widget>
    <widget class="QMenu" name="projectMenu">
     <property name="title">
@@ -183,42 +164,42 @@
     <property name="title">
      <string>Отладка</string>
     </property>
-    <addaction name="action_8"/>
-    <addaction name="action_12"/>
+    <addaction name="Debug"/>
+    <addaction name="Check"/>
    </widget>
    <widget class="QMenu" name="translationMenu">
     <property name="title">
      <string>Трансляция</string>
     </property>
     <addaction name="Translation"/>
-    <addaction name="action_9"/>
+    <addaction name="ConnectDebugger"/>
    </widget>
    <widget class="QMenu" name="compilationMenu">
     <property name="title">
      <string>Компиляция</string>
     </property>
-    <addaction name="action_10"/>
-    <addaction name="action_11"/>
+    <addaction name="Compile"/>
+    <addaction name="ConnectCompiler"/>
    </widget>
    <widget class="QMenu" name="interpreterMenu">
     <property name="title">
      <string>Интерпретация</string>
     </property>
+    <addaction name="action"/>
    </widget>
    <widget class="QMenu" name="buildMenu">
     <property name="title">
      <string>Сборка</string>
     </property>
+    <addaction name="action_3"/>
+    <addaction name="action_5"/>
    </widget>
    <widget class="QMenu" name="aboutMenu">
     <property name="title">
      <string>Справка</string>
     </property>
-   </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>Настройки</string>
-    </property>
+    <addaction name="action_7"/>
+    <addaction name="action_8"/>
    </widget>
    <addaction name="fileMenu"/>
    <addaction name="editMenu"/>
@@ -228,7 +209,6 @@
    <addaction name="compilationMenu"/>
    <addaction name="interpreterMenu"/>
    <addaction name="buildMenu"/>
-   <addaction name="menu_2"/>
    <addaction name="aboutMenu"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
@@ -248,8 +228,8 @@
    <addaction name="Open"/>
    <addaction name="Save"/>
    <addaction name="separator"/>
-   <addaction name="action"/>
-   <addaction name="action_3"/>
+   <addaction name="Undo"/>
+   <addaction name="Redo"/>
    <addaction name="separator"/>
   </widget>
   <action name="NewFile">
@@ -275,8 +255,8 @@
   </action>
   <action name="Open">
    <property name="icon">
-    <iconset>
-     <normaloff>:/img/open.png</normaloff>:/img/open.png</iconset>
+    <iconset resource="Res.qrc">
+     <normaloff>:/res/img/open.png</normaloff>:/res/img/open.png</iconset>
    </property>
    <property name="text">
     <string>Открыть</string>
@@ -308,62 +288,92 @@
     <string>Сохранить как</string>
    </property>
   </action>
-  <action name="action">
+  <action name="Undo">
    <property name="icon">
-    <iconset>
-     <normaloff>:/img/undo.png</normaloff>:/img/undo.png</iconset>
+    <iconset resource="Res.qrc">
+     <normaloff>:/res/img/undo.png</normaloff>:/res/img/undo.png</iconset>
    </property>
    <property name="text">
     <string>Отменить</string>
    </property>
   </action>
-  <action name="action_3">
+  <action name="Redo">
    <property name="icon">
-    <iconset>
-     <normaloff>:/img/redo.png</normaloff>:/img/redo.png</iconset>
+    <iconset resource="Res.qrc">
+     <normaloff>:/res/img/redo.png</normaloff>:/res/img/redo.png</iconset>
    </property>
    <property name="text">
     <string>Вернуть</string>
    </property>
   </action>
-  <action name="action_5">
+  <action name="Cut">
    <property name="text">
     <string>Вырезать</string>
    </property>
   </action>
-  <action name="action_6">
+  <action name="Copy">
    <property name="text">
     <string>Копировать</string>
    </property>
   </action>
-  <action name="action_7">
+  <action name="Paste">
    <property name="text">
     <string>Вставить</string>
    </property>
   </action>
-  <action name="action_8">
+  <action name="Debug">
    <property name="text">
     <string>Начать отладку</string>
    </property>
   </action>
-  <action name="action_9">
+  <action name="ConnectDebugger">
    <property name="text">
     <string>Подключить транслятор</string>
    </property>
   </action>
-  <action name="action_10">
+  <action name="Compile">
    <property name="text">
     <string>Компилировать</string>
    </property>
   </action>
-  <action name="action_11">
+  <action name="ConnectCompiler">
    <property name="text">
     <string>Подключить компилятор</string>
    </property>
   </action>
-  <action name="action_12">
+  <action name="Check">
    <property name="text">
     <string>Проверка формул</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Интерпретировать</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>Начать сборку</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>Параметры сборки</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>Настройки</string>
+   </property>
+  </action>
+  <action name="action_7">
+   <property name="text">
+    <string>Помощь</string>
+   </property>
+  </action>
+  <action name="action_8">
+   <property name="text">
+    <string>О программе</string>
    </property>
   </action>
  </widget>
