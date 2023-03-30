@@ -1,8 +1,18 @@
 #include "mainwindow.h"
+#include "qtranslator.h"
 
 #include <QApplication>
-#include <QLocale>
-#include <QTranslator>
+
+QString createNewProject(QString name){
+
+    if(!QDir(name).exists()){
+        QDir().mkdir(name);
+        QDir(name).mkdir("Ресурсы");
+        QDir(name).mkdir("Исходники");
+        QDir(name).mkdir("Графы");
+    }
+    return QDir(QDir::currentPath()).filePath(name);
+}
 
 int main(int argc, char *argv[])
 {
@@ -19,5 +29,8 @@ int main(int argc, char *argv[])
     }
     MainWindow w;
     w.show();
+
+    w.SetDirView(createNewProject("NewProject"));
     return a.exec();
 }
+
