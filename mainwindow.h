@@ -17,6 +17,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void SetDirView(QString path);
+    static QString createNewProject(QString name);
+    void openFile(QString filename);
 
 
 private:

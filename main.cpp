@@ -3,16 +3,7 @@
 
 #include <QApplication>
 
-QString createNewProject(QString name){
 
-    if(!QDir(name).exists()){
-        QDir().mkdir(name);
-        QDir(name).mkdir("Ресурсы");
-        QDir(name).mkdir("Исходники");
-        QDir(name).mkdir("Графы");
-    }
-    return QDir(QDir::currentPath()).filePath(name);
-}
 
 int main(int argc, char *argv[])
 {
@@ -29,8 +20,8 @@ int main(int argc, char *argv[])
     }
     MainWindow w;
     w.show();
-
-    w.SetDirView(createNewProject("NewProject"));
+    w.SetDirView(w.createNewProject("NewProject"));
+    w.openFile("NewProject/Исходники/source.pfg");
     return a.exec();
 }
 

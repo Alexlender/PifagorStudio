@@ -44,7 +44,7 @@
      </widget>
     </item>
     <item row="0" column="2">
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QTabWidget" name="filesWidget">
       <property name="minimumSize">
        <size>
         <width>500</width>
@@ -82,37 +82,9 @@
        <bool>false</bool>
       </property>
       <widget class="QWidget" name="tab">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
        <attribute name="title">
-        <string notr="true">file</string>
+        <string>Страница</string>
        </attribute>
-       <widget class="QTextEdit" name="textEdit">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>791</width>
-          <height>521</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
-        </property>
-       </widget>
       </widget>
      </widget>
     </item>
@@ -159,7 +131,7 @@
     <addaction name="Cut"/>
     <addaction name="Copy"/>
     <addaction name="Paste"/>
-    <addaction name="action_6"/>
+    <addaction name="Config"/>
    </widget>
    <widget class="QMenu" name="projectMenu">
     <property name="title">
@@ -191,21 +163,21 @@
     <property name="title">
      <string>Интерпретация</string>
     </property>
-    <addaction name="action"/>
+    <addaction name="Interpret"/>
    </widget>
    <widget class="QMenu" name="buildMenu">
     <property name="title">
      <string>Сборка</string>
     </property>
-    <addaction name="action_3"/>
-    <addaction name="action_5"/>
+    <addaction name="Build"/>
+    <addaction name="Build_config"/>
    </widget>
    <widget class="QMenu" name="aboutMenu">
     <property name="title">
      <string>Справка</string>
     </property>
-    <addaction name="action_7"/>
-    <addaction name="action_8"/>
+    <addaction name="Help"/>
+    <addaction name="About"/>
    </widget>
    <addaction name="fileMenu"/>
    <addaction name="editMenu"/>
@@ -237,6 +209,11 @@
    <addaction name="Undo"/>
    <addaction name="Redo"/>
    <addaction name="separator"/>
+   <addaction name="Build"/>
+   <addaction name="Compile"/>
+   <addaction name="Debug"/>
+   <addaction name="Interpret"/>
+   <addaction name="Translation"/>
   </widget>
   <action name="NewFile">
    <property name="icon">
@@ -272,6 +249,10 @@
    </property>
   </action>
   <action name="Translation">
+   <property name="icon">
+    <iconset resource="Res.qrc">
+     <normaloff>:/res/img/transl.png</normaloff>:/res/img/transl.png</iconset>
+   </property>
    <property name="text">
     <string>Транслировать</string>
    </property>
@@ -328,6 +309,10 @@
    </property>
   </action>
   <action name="Debug">
+   <property name="icon">
+    <iconset resource="Res.qrc">
+     <normaloff>:/res/img/debug.png</normaloff>:/res/img/debug.png</iconset>
+   </property>
    <property name="text">
     <string>Начать отладку</string>
    </property>
@@ -338,6 +323,10 @@
    </property>
   </action>
   <action name="Compile">
+   <property name="icon">
+    <iconset resource="Res.qrc">
+     <normaloff>:/res/img/run.png</normaloff>:/res/img/run.png</iconset>
+   </property>
    <property name="text">
     <string>Компилировать</string>
    </property>
@@ -352,32 +341,40 @@
     <string>Проверка формул</string>
    </property>
   </action>
-  <action name="action">
+  <action name="Interpret">
+   <property name="icon">
+    <iconset resource="Res.qrc">
+     <normaloff>:/res/img/graph.png</normaloff>:/res/img/graph.png</iconset>
+   </property>
    <property name="text">
     <string>Интерпретировать</string>
    </property>
   </action>
-  <action name="action_3">
+  <action name="Build">
+   <property name="icon">
+    <iconset resource="Res.qrc">
+     <normaloff>:/res/img/build.png</normaloff>:/res/img/build.png</iconset>
+   </property>
    <property name="text">
     <string>Начать сборку</string>
    </property>
   </action>
-  <action name="action_5">
+  <action name="Build_config">
    <property name="text">
     <string>Параметры сборки</string>
    </property>
   </action>
-  <action name="action_6">
+  <action name="Config">
    <property name="text">
     <string>Настройки</string>
    </property>
   </action>
-  <action name="action_7">
+  <action name="Help">
    <property name="text">
     <string>Помощь</string>
    </property>
   </action>
-  <action name="action_8">
+  <action name="About">
    <property name="text">
     <string>О программе</string>
    </property>
